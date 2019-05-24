@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.sslsdk.platform.api.SSLSDKManager;
+import com.sslsdk.platform.domain.User;
 import com.sslsdk.platform.listener.InitListener;
+import com.sslsdk.platform.listener.LoginListener;
+import com.sslsdk.platform.utils.ResouceUtil;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,13 +19,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(ResouceUtil.getLayoutId(this,"activity_main"));
         initView();
+        final Map <String,String> map=new HashMap<>();
+        map.put("gid","122");
+        map.put("debug","true");// true 开启调试模式  false  关闭
 
         btn_init.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SSLSDKManager.getInStance().init(MainActivity.this, "123", "123", new InitListener() {
+                SSLSDKManager.getInStance().init(MainActivity.this, map, new InitListener() {
                     @Override
                     public void onInitSuccess() {
                         Toast.makeText(MainActivity.this,"onInitSuccess",Toast.LENGTH_SHORT).show();
@@ -39,7 +46,18 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SSLSDKManager.getInStance().login(new LoginListener() {
 
+                    @Override
+                    public void onLoginSuccess(User user) {
+                        //todo 登录成功
+                    }
+
+                    @Override
+                    public void onLoginFailed(String msg) {
+                        //todo 登录失败
+                    }
+                });
             }
         });
 

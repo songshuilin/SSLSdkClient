@@ -8,6 +8,9 @@ package com.sslsdk.platform.constant;
  */
 public class Constants {
 
-    public static final String BASE_URL="http://192.168.35.104:8080";
+    public static final String BASE_URL="http://192.168.35.104:8080/";
+
+    /** sdk tag **/
+    public  static  final  String SDK_TAG="sslsdk";
 
 }

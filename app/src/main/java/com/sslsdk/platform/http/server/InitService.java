@@ -1,7 +1,13 @@
 package com.sslsdk.platform.http.server;
 
+import com.google.gson.JsonObject;
+
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 /**
  * @program
@@ -11,7 +17,8 @@ import retrofit2.http.GET;
  */
 public interface InitService {
 
+
     @GET("init")
-    Call <String>init();
+    Call <JsonObject>init(@QueryMap Map<String ,String> map);
 
 }

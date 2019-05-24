@@ -1,9 +1,13 @@
 package com.sslsdk.platform.api;
 
 import android.content.Context;
-
+import android.content.Intent;
+import com.sslsdk.platform.activity.LoginActivity;
 import com.sslsdk.platform.listener.InitListener;
-import com.sslsdk.platform.utils.HttpUtil;
+import com.sslsdk.platform.listener.LoginListener;
+import com.sslsdk.platform.http.utils.HttpUtil;
+import com.sslsdk.platform.utils.LogUtil;
+import java.util.Map;
 
 /**
  * @program
@@ -35,20 +39,30 @@ public class SSLSDKManager {
 
 
     /**
-     *  初始化
+     * 初始化
      * @param mContext
-     * @param gameId 游戏id 唯一
-     * @param mSecretKey  加密key
+     * @param map    String gameId, String mSecretKey
      * @param initListener
      */
-    public void init(Context mContext, String gameId, String mSecretKey,InitListener initListener) {
+    public void init(Context mContext, Map<String,String> map, InitListener initListener) {
 
         this.mContext = mContext;
+        //todo  这里可以统计下数据
+
+        //true 打开日志  false 相反
+        LogUtil.logEnable=map.get("debug").equals("true")?true : false;
+        HttpUtil.getInstance().get(map,initListener);
+    }
 
 
+    /**
+     * 登录
+     * @param loginListener
+     */
+    public void  login(LoginListener loginListener){
 
-
-
+        Intent intent=new Intent(mContext, LoginActivity.class);
+        mContext.startActivity(intent);
 
     }
 

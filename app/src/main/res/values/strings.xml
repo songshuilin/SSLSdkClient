@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SSLSdkClient</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="login_password_hint">请输入密码：6-20位数字或字母，区分大小写</string>
+    <string name="login_username_hint">请输入账号：6-20位数字或字母，区分大小写</string>
+    <string name="loginAuto">自动登录</string>
+    <string name="loginForgetPwd">忘记密码？</string>
+    <string name="login">登录</string>
+    <string name="loginAccountReg">账号注册</string>
+    <string name="loginSeparate">|</string>
+    <string name="loginMobileReg">手机注册</string>
 </resources>
