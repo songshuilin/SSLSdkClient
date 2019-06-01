@@ -2,8 +2,6 @@ package com.sslsdk.platform.utils;
 
 import android.util.Log;
 
-import com.sslsdk.platform.constant.Constants;
-
 /**
  * @program
  * @Desc

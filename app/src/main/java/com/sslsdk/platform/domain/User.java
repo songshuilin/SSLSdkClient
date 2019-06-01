@@ -1,5 +1,7 @@
 package com.sslsdk.platform.domain;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * author 游戏人日常
  * 用户bean
@@ -7,11 +9,17 @@ package com.sslsdk.platform.domain;
 
 public class User {
 
+    @SerializedName("username")
     private String userName;
+
+    @SerializedName("uid")
     private String userId;
-    private String client;
-    private String tokenTime;
+
+    @SerializedName("token")
     private String token;
+
+
+
 
     public String getUserName() {
         return userName;
@@ -29,21 +37,6 @@ public class User {
         this.userId = userId;
     }
 
-    public String getClient() {
-        return client;
-    }
-
-    public void setClient(String client) {
-        this.client = client;
-    }
-
-    public String getTokenTime() {
-        return tokenTime;
-    }
-
-    public void setTokenTime(String tokenTime) {
-        this.tokenTime = tokenTime;
-    }
 
     public String getToken() {
         return token;
@@ -58,9 +51,13 @@ public class User {
         return "User{" +
                 "userName='" + userName + '\'' +
                 ", userId='" + userId + '\'' +
-                ", client='" + client + '\'' +
-                ", tokenTime='" + tokenTime + '\'' +
                 ", token='" + token + '\'' +
                 '}';
+    }
+
+
+    public  User getUser(){
+
+        return  this;
     }
 }

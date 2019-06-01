@@ -2,7 +2,7 @@ package com.sslsdk.platform.api;
 
 import android.content.Context;
 import android.content.Intent;
-import com.sslsdk.platform.activity.LoginActivity;
+import com.sslsdk.platform.mvp.login.LoginActivity;
 import com.sslsdk.platform.listener.InitListener;
 import com.sslsdk.platform.listener.LoginListener;
 import com.sslsdk.platform.http.utils.HttpUtil;

@@ -1,7 +1,7 @@
 package com.sslsdk.platform.http.utils;
 
 import com.google.gson.JsonObject;
-import com.sslsdk.platform.http.server.InitService;
+import com.sslsdk.platform.http.server.ApiService;
 import com.sslsdk.platform.listener.InitListener;
 import com.sslsdk.platform.utils.LogUtil;
 import java.util.Map;
@@ -46,7 +46,7 @@ public class HttpUtil {
             return;
         }
 
-        InitService initService=RetrofitUtil.getRetrofit().create(InitService.class);
+        ApiService initService=ApiUtil.getApiService();
 
         Call<JsonObject> data=initService.init(map);
 

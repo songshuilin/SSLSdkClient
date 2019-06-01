@@ -1,4 +1,4 @@
-package com.sslsdk.platform.constant;
+package com.sslsdk.platform.utils;
 
 /**
  * @program
@@ -7,6 +7,8 @@ package com.sslsdk.platform.constant;
  * @CreateTime 2019/04/04--16:57
  */
 public class Constants {
+
+    public static final String API_KEY="";
 
     public static final String BASE_URL="http://192.168.35.104:8080/";
 
